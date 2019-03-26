@@ -1,6 +1,6 @@
 'use strict';
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-const SEND_API = process.env.SEND_API;
+const PAGE_ACCESS_TOKEN = 'EAALRhyvrhYIBAP91TM24QZCmQx2pHOwUSFhRI3bSVpZA6vPq9BjIuorJyZALK35fp87OnoPCM6vZBdq0IaTkwWWW8qf4yv9KRtbwPqOnubOZAgSQzVPn09sBiQ41ciKyXjrzKe6DWdtWtM8ao6jxBZA1ttlXjl1ZBicZAt23tvz0xOwIMjp0dsVq';
+const SEND_API = 'https://graph.facebook.com/v3.0/me/messages';
 // Imports dependencies and set up http server
 const
   express = require('express'),
