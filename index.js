@@ -59,6 +59,7 @@ function callSendAPI(psid, message) {
 */
 function handleMessage(sender_psid, received_message) {
 let text = received_message.text;
+let response;
  if (received_message.text==="hello") {
 	  	   response = { "text": "Привет, Вы обратились на страницу AllDataBot" + '\n' + "Чтобы узнать что я могу введи help или помощь" }
 
