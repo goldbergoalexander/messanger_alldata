@@ -82,7 +82,7 @@ app.post('/webhook', (req, res) => {
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
 	  let sender_psid = webhook_event.sender.id; //add psid
-	  messanger.handleMessage(sender_psid,webhook_event.massege); //send messagehandler
+	  handleMessage(sender_psid,webhook_event.massege); //send messagehandler
       console.log(webhook_event);
     });
 
