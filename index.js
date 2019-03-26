@@ -8,7 +8,7 @@ const
   app = express().use(bodyParser.json()); // creates express http server
 
 // Sets server port and logs message on success
-app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+app.listen(process.env.PORT || 8989, () => console.log('webhook is listening on 8989' ));
 
 //handle messages
 function handleMessage(sender_psid, received_message) {
@@ -20,27 +20,6 @@ function handleMessage(sender_psid, received_message) {
     }    
 }
 //handle messages
-/**
-*
-* handle message if say "hallo"
-*
-*/
-function handleMessage(sender_psid, received_message) {
-let response;
-let text = received_message.text;
-
- if (received_message.text) {
-	  	   response = { "text": "hi there, i am AllDataBot" }
-
-}
-callSendAPI(sender_psid, response);
-}
-/**
-*
-* handle message if say "hallo"
-*
-*/
-
 /**
  * Calls the Messenger API to send the message
  */
@@ -67,6 +46,27 @@ function callSendAPI(psid, message) {
         }
     });
 }
+
+/**
+*
+* handle message if say "hallo"
+*
+*/
+function handleMessage(sender_psid, received_message) {
+let response;
+let text = received_message.text;
+
+ if (received_message.text) {
+	  	   response = { "text": "hi there, i am AllDataBot" }
+
+}
+callSendAPI(sender_psid, response);
+}
+/**
+*
+* handle message if say "hallo"
+*
+*/
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
@@ -99,7 +99,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN =  process.env.VERIFY_TOKEN;
+  let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
   
   // Parse the query params
   let mode = req.query['hub.mode'];
