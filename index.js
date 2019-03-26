@@ -150,3 +150,4 @@ app.get('/webhook', (req, res) => {
   }
 });
 
+exports.response = response;
