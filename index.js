@@ -73,7 +73,7 @@ let text = received_message.text;
 }
  //##########################################  show keyboard ############################################################
    else {
-	   cosole.log('This is  sender name : ' + psid)
+	   console.log('This is  sender name : ' + psid);
   response = { 
     "attachment":{
       "type":"template",
