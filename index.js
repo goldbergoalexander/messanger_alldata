@@ -78,6 +78,7 @@ let text = received_message.text;
         "template_type":"button",
         "text":`Выберите задание`,
         "buttons":[
+		[
           {
             "type":"postback",
              "title":"помощь/help",
@@ -88,6 +89,8 @@ let text = received_message.text;
                 "title": "поиск в едр",
                 "payload": "edrsearch",
           },
+		  ],
+		  [
           {
 			    "type": "postback",
                 "title": "поиск авто",
@@ -100,6 +103,7 @@ let text = received_message.text;
                 "payload": "about",
 			  
 		  }
+		  ]
 		 ]
       }
     }
