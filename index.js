@@ -21,6 +21,7 @@ function handleMessage(sender_psid, received_message) {
 }
 //handle messages
 
+
 /**
  * Calls the Messenger API to send the message
  */
@@ -47,6 +48,28 @@ function callSendAPI(psid, message) {
         }
     });
 }
+
+
+/**
+*
+* handle message if say "hallo"
+*
+*/
+function handleMessage(sender_psid, received_message) {
+let response;
+let text = received_message.text;
+
+ if (received_message.text==='hello') {
+	  response = "hi there, i am AllDataBot"
+
+}
+callSendAPI(sender_psid, response)
+}
+/**
+*
+* handle message if say "hallo"
+*
+*/
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
