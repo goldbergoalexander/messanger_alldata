@@ -46,11 +46,10 @@ function callSendAPI(psid, message) {
         }
     });
 }
-
 /**
 *
 * handle message if say "hallo"
-*
+*ssdsdsd
 */
 function handleMessage(sender_psid, received_message) {
 let response;
@@ -99,7 +98,7 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+  let VERIFY_TOKEN = process.env.VERIFY_TOKEN; //set vrufy token
   
   // Parse the query params
   let mode = req.query['hub.mode'];
