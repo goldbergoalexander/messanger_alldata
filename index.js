@@ -4,7 +4,6 @@ const axios  = require('axios'),
 PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN,
 SEND_API = process.env.SEND_API,
 keyboards = require('./routes/keyboards.js');
-var response;
 
 
 
@@ -74,7 +73,7 @@ let text = received_message.text;
 }
  //##########################################  show keyboard ############################################################
    else {
-  keyboards.mainmenu();
+  response = keyboards.mainmenu();
    }
   //##########################################  show keyboard ############################################################
 
@@ -151,4 +150,3 @@ app.get('/webhook', (req, res) => {
   }
 });
 
-module.exports = {response};
