@@ -1,5 +1,6 @@
 'use strict';
-const YOUR_VERIFY_TOKEN = 'EAALRhyvrhYIBABVKsTtyX3uXiv3Uann0oDLKCXiIS6S3qAderKFKAm0DL8haVOH8z1lYTIK6ZB1CbN20m7cC23Q2nZAx65e3oqwb9xZAM3RncKwqFgfjTwFcZASrEzcU8wlnSWRzsmLEusn3GHly0TqhdIwSCftIyOyNKa8Ah9VKuzHQimjE';
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+const SEND_API = process.env.SEND_API;
 // Imports dependencies and set up http server
 const
   express = require('express'),
@@ -8,6 +9,44 @@ const
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+
+//handle messages
+function handleMessage(sender_psid, received_message) {
+    // check if the input is text message
+    // users might send smiley which can be filtered out
+    if(typeof received_message.text !== "undefined") {
+        let message = received_message.text.toLowerCase();
+        callSendAPI(sender_psid, { text: message });
+    }    
+}
+//handle messages
+
+/**
+ * Calls the Messenger API to send the message
+ */
+function callSendAPI(psid, message) {
+    let data = { 
+        "recipient": { "id": psid }, 
+        "message": message 
+    };
+    return axios({
+        method: 'POST',
+        url: SEND_API,
+        params: { access_token: PAGE_ACCESS_TOKEN },
+        data: data
+    })
+    .catch((error) => {
+        if (error.response) {
+            console.log('PSID: ', psid);
+            console.log('Status code: ', error.response.status);
+            console.log('Response: ', error.response.data);
+        } else if (error.request) {
+            console.log('Request: ', error.request); 
+        } else {
+            console.log('Error: ', error.message);
+        }
+    });
+}
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
@@ -23,6 +62,8 @@ app.post('/webhook', (req, res) => {
       // Gets the message. entry.messaging is an array, but 
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
+	  let sender_psid = webhook_event.sender.id; //add psid
+	  messanger.handleMessage(sender_psid,webhook_event.massege); //send messagehandler
       console.log(webhook_event);
     });
 
@@ -38,8 +79,8 @@ app.post('/webhook', (req, res) => {
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN = "EAALRhyvrhYIBABVKsTtyX3uXiv3Uann0oDLKCXiIS6S3qAderKFKAm0DL8haVOH8z1lYTIK6ZB1CbN20m7cC23Q2nZAx65e3oqwb9xZAM3RncKwqFgfjTwFcZASrEzcU8wlnSWRzsmLEusn3GHly0TqhdIwSCftIyOyNKa8Ah9VKuzHQimjE";
-    
+  let VERIFY_TOKEN =  process.env.VERIFY_TOKEN;
+  
   // Parse the query params
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
