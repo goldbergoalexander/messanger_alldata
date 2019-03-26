@@ -4,7 +4,7 @@ const axios  = require('axios'),
 PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN,
 SEND_API = process.env.SEND_API,
 keyboards = require('./routes/keyboards.js');
-let response;
+
 
 // Imports dependencies and set up http server
 const
@@ -58,7 +58,7 @@ function callSendAPI(psid, message) {
 */
 function handleMessage(sender_psid, received_message) {
 let text = received_message.text;
-   
+let response;  
  if (received_message.text==="hello") {
 	  	   response = { "text": "Привет, Вы обратились на страницу AllDataBot" + '\n' + "Чтобы узнать что я могу введи help или помощь" }
 
@@ -150,4 +150,4 @@ app.get('/webhook', (req, res) => {
   }
 });
 
-//module.exports = {response};
+module.exports = {response};
