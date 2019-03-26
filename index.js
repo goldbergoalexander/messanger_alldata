@@ -62,18 +62,15 @@ let text = received_message.text;
 
 }
  else if (received_message.text==="помощь" || received_message.text==="help" ) {
-	 function res1(){response = { "text": "Привет AllDataBot может : " }}
-	 function res2(){response = {"text": "- # - поиск юридичесских лиц по названию, коду ЕДРПО, поиск бенифициаров, поиск по нескольким параметрам - # -"}}
-	 function res3(){response = {"text": "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта - # -"}}
+	  	   response = { "text": "Привет AllDataBot может : " 
+		   + '\n' + "- # - поиск юридичесских лиц по названию, коду ЕДРПО, поиск бенифициаров, поиск по нескольким параметрам - # -" 
+		   + '\n' + "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта, поиск по нескольким параметрам - # -"	   
 		   
-		    setTimeout(res1,2000);
-			setTimeout(res2,4000);
-			setTimeout(res3,6000);
-		   	   
+		   }
+
 }
  //##########################################  show keyboard ############################################################
    else {
-	   console.log('This is  sender name : ' + psid);
   response = { 
     "attachment":{
       "type":"template",
