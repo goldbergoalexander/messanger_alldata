@@ -1,8 +1,10 @@
 'use strict';
 require('dotenv').config();
-const axios  = require('axios');
-const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-const SEND_API = process.env.SEND_API;
+const axios  = require('axios'),
+PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN,
+SEND_API = process.env.SEND_API,
+keyboards = require('./routes/keyboards.js');
+
 // Imports dependencies and set up http server
 const
   express = require('express'),
@@ -64,43 +66,14 @@ let text = received_message.text;
  else if (received_message.text==="помощь" || received_message.text==="help" ) {
 	  	   response = { "text": "Привет AllDataBot может : " 
 		   + '\n' + "- # - поиск юридичесских лиц по названию, коду ЕДРПО, поиск бенифициаров, поиск по нескольким параметрам - # -" 
-		   + '\n' + "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта, поиск по нескольким параметрам - # -"	   
+		   + '\n' + "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта- # -"	   
 		   
 		   }
 
 }
  //##########################################  show keyboard ############################################################
    else {
-  response = { 
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-       "text" : "я не понимаю слов пользуйтесь клавиатурой ниже \ud83d\udc47",
-        "buttons":[
-		
-          {
-            "type":"postback",
-             "title":"помощь/help",
-			 "payload": "help",
-          },
-          {
-                "type": "postback",
-                "title": "поиск в едр",
-                "payload": "edrsearch",
-          },
-		 
-          {
-			    "type": "postback",
-                "title": "поиск авто",
-                "payload": "carsearch",
-			  
-		  }
-		 
-		 ]
-      }
-    }
-}
+  keyboards.mainmenu();
    }
   //##########################################  show keyboard ############################################################
 
