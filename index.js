@@ -61,7 +61,7 @@ let text = received_message.text;
 	  	   response = { "text": "Привет, Вы обратились на страницу AllDataBot" + '\n' + "Чтобы узнать что я могу введи help или помощь" }
 
 }
- if (received_message.text==="помощь" || received_message.text==="help" ) {
+ else if (received_message.text==="помощь" || received_message.text==="help" ) {
 	  	   response = { "text": "Привет AllDataBot может : " 
 		   + '\n' + "- # - поиск юридичесских лиц по названию, коду ЕДРПО, поиск бенифициаров, поиск по нескольким параметрам - # -" 
 		   + '\n' + "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта, поиск по нескольким параметрам - # -"	   
@@ -70,7 +70,7 @@ let text = received_message.text;
 
 }
  //##########################################  show keyboard ############################################################
-   else{
+   if(received_message.text){
   response = {
     "attachment":{
       "type":"template",
