@@ -57,7 +57,7 @@ function handleMessage(sender_psid, received_message) {
 let response;
 let text = received_message.text;
 
- if (received_message.text) {
+ if (received_message.text==="hello") {
 	  	   response = { "text": "hi there, i am AllDataBot" }
 
 }
