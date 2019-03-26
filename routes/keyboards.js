@@ -17,7 +17,8 @@ index = require('../index.js');
   *
   */
   function mainmenu(){
- return index.response = { 
+	  let response;
+ return response = { 
     "attachment":{
       "type":"template",
       "payload":{
