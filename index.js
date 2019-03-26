@@ -56,11 +56,60 @@ function callSendAPI(psid, message) {
 function handleMessage(sender_psid, received_message) {
 let response;
 let text = received_message.text;
-
+   
  if (received_message.text==="hello") {
-	  	   response = { "text": "hi there, i am AllDataBot" }
+	  	   response = { "text": "Привет, Вы обратились на страницу AllDataBot" + '\n' + "Чтобы узнать что я могу введи help или помощь" }
 
 }
+ if (received_message.text==="помощь" || received_message.text==="help" ) {
+	  	   response = { "text": "Привет AllDataBot может : " 
+		   + '\n' + "- # - поиск юридичесских лиц по названию, коду ЕДРПО, поиск бенифициаров, поиск по нескольким параметрам - # -" 
+		   + '\n' + "- # - поиск автомобилей, по номеру , поиск по номеру техпаспорта, поиск по нескольким параметрам - # -"	   
+		   
+		   }
+
+}
+ //##########################################  show keyboard ############################################################
+   else{
+  response = {
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":`Выберите задание`,
+        "buttons":[
+          {
+            "type":"postback",
+             "title":"помощь/help"
+			 "payload": "help",
+          },
+          {
+                "type": "postback",
+                "title": "поиск в едр",
+                "payload": "edrsearch",
+          },
+          {
+			    "type": "postback",
+                "title": "поиск авто",
+                "payload": "carsearch",
+			  
+		  }
+		  {
+			    "type": "postback",
+                "title": "про AllDataBot",
+                "payload": "about",
+			  
+		  }
+		 ]
+      }
+    }
+}
+   }
+  //##########################################  show keyboard ############################################################
+
+
+
+
 callSendAPI(sender_psid, response);
 }
 /**
