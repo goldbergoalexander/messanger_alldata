@@ -70,7 +70,7 @@ let text = received_message.text;
 
 }
  //##########################################  show keyboard ############################################################
-   if(received_message.text!="hello" || received_message.text!="помощь" || received_message.text!="help"){
+   else {
   response = {
     "attachment":{
       "type":"template",
@@ -103,9 +103,6 @@ let text = received_message.text;
 }
    }
   //##########################################  show keyboard ############################################################
-
-
-
 
 callSendAPI(sender_psid, response);
 }
