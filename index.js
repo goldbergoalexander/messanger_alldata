@@ -70,7 +70,7 @@ let text = received_message.text;
 
 }
  //##########################################  show keyboard ############################################################
-   if(received_message.text){
+   if(received_message.text!="hello" || received_message.text!="помощь" || received_message.text!="help"){
   response = {
     "attachment":{
       "type":"template",
