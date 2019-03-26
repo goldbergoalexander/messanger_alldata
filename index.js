@@ -71,12 +71,12 @@ let text = received_message.text;
 }
  //##########################################  show keyboard ############################################################
    else {
-  response = { 'text' : "я не понимаю слов пользуйтесь клавиатурой ниже \ud83d\udc47" + '\n' + 
+  response = { 
     "attachment":{
       "type":"template",
       "payload":{
         "template_type":"button",
-       // "text":`Выберите задание`,
+       "text" : "я не понимаю слов пользуйтесь клавиатурой ниже \ud83d\udc47",
         "buttons":[
 		
           {
