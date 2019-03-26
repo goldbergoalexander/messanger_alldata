@@ -87,7 +87,8 @@ let response;
 let text = received_message.text;
 
  if (received_message.text) {
-	  response = "hi there, i am AllDataBot"
+	  //response = "hi there, i am AllDataBot"
+	  response = { "text": "hi there, i am AllDataBot" }
 
 }
 callSendAPI(sender_psid, response)
