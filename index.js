@@ -1,7 +1,7 @@
 'use strict';
 
 // Imports dependencies and set up http server
-var PAGE_ACCESS_TOKEN1="EAAHXc3OsQTABAIoD0tTmBAEcaL9S9xxMhZApnKbUSTbjdxZAqRRZBfyEC2zuv4wDQpDp3CbZAS418cBh0hG9ZAWfYGcLsArjF9ih9JTmOfavfKIgWZAzCcVw4VnqSrL15qj4QEiMY3tWXEXSyZAKhhb8QYkIymZCq4ihDB5P34gYLDCTJzGQYIBc";
+var PAGE_ACCESS_TOKEN1="EAALRhyvrhYIBAHphZAGs0fnBX7PKaD56n2Xy7Pw4V5uzTsZCX9PlEBZCbxRZCA5n8f1nVS2CpfGzwHqStZBivBvpIeTWQPLJFFxUnyMSYEeKsLzLbgFD3VUJ9CzuwjBsgrO6TyCLRAzfeoZAuxmVsf2KjLZCYomb544GPK1ZCbbE5LRsExSJ8CDT";
 const
   express = require('express'),
   bodyParser = require('body-parser'),
