@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config();
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const SEND_API = process.env.SEND_API;
 // Imports dependencies and set up http server
@@ -81,9 +82,18 @@ app.post('/webhook', (req, res) => {
       // Gets the message. entry.messaging is an array, but 
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
-	  let sender_psid = webhook_event.sender.id; //add psid
-	  handleMessage(sender_psid,webhook_event.massege); //send messagehandler
       console.log(webhook_event);
+	  // Get the sender PSID
+      let sender_psid = webhook_event.sender.id;
+      console.log('Sender PSID: ' + sender_psid);
+// Check if the event is a message or postback and
+  // pass the event to the appropriate handler function
+  if (webhook_event.message) {
+    handleMessage(sender_psid, webhook_event.message);        
+  } else if (webhook_event.postback) {
+    handlePostback(sender_psid, webhook_event.postback);
+  }
+	  
     });
 
     // Returns a '200 OK' response to all requests
@@ -95,11 +105,12 @@ app.post('/webhook', (req, res) => {
 
 });
 // Adds support for GET requests to our webhook
+// Adds support for GET requests to our webhook
 app.get('/webhook', (req, res) => {
 
   // Your verify token. Should be a random string.
-  let VERIFY_TOKEN ='12334454565657567'; //set vrufy token
-  
+  let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+    
   // Parse the query params
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
