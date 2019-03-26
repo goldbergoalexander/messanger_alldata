@@ -17,7 +17,7 @@ const
   *
   */
   function mainmenu(){
-  response = { 
+ return response = { 
     "attachment":{
       "type":"template",
       "payload":{
