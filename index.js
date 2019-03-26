@@ -57,100 +57,10 @@ function handleMessage(sender_psid, received_message) {
 let response;
 let text = received_message.text;
 
- if (received_message.text) {    
-  
+ if (received_message.text==="hello") {
+	  	   response = { "text": "hi there, i am AllDataBot" }
 
-    // Create the payload for a basic text message
-    //response = {"text": `Привет вы написали мне уведомление: "${received_message.text}". Что Вас интересует?` } //old respose 
-	  
-	     response = {
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":`Привет Вы написали мне уведомление. Я помогу Вам. Нажмите ниже на интетесующюю Вас Кнопку `,
-        "buttons":[
-          {
-            "type":"web_url",
-            "url":"http://arhitek.xyz/#contactForm", //changed domain
-            "title":"Напишите Нам"
-          },
-          {
-                "type": "postback",
-                "title": "Цены за услуги",
-                "payload": "price",
-          },
-          {
-			    "type": "postback",
-                "title": "Узнать типы Техпаспортов",
-                "payload": "typetech",
-			  
-		  }
-		  /*
-		  {
-			    "type": "web_url",
-                "url": "http://arhitek.xyz/#contactForm",
-                "title": "Написать мне"
-			  
-		  }
-		  */
-        ]
-      }
-    }
 }
-  /*
-  response  =
-  {"persistent_menu":[
-    {
-      "locale":"default",
-      "composer_input_disabled": true,
-      "call_to_actions":[
-        {
-          "title":"My Account",
-          "type":"nested",
-          "call_to_actions":[
-            {
-              "title":"Pay Bill",
-              "type":"postback",
-              "payload":"PAYBILL_PAYLOAD"
-            },
-            {
-              "title":"History",
-              "type":"postback",
-              "payload":"HISTORY_PAYLOAD"
-            },
-            {
-              "title":"Contact Info",
-              "type":"postback",
-              "payload":"CONTACT_INFO_PAYLOAD"
-            }
-          ]
-        },
-        {
-          "type":"web_url",
-          "title":"Latest News",
-          "url":"http://www.messenger.com/",
-          "webview_height_ratio":"full"
-        }
-      ]
-    },
-    {
-      "locale":"zh_CN",
-      "composer_input_disabled":false,
-      "call_to_actions":[
-        {
-          "title":"Pay Bill",
-          "type":"postback",
-          "payload":"PAYBILL_PAYLOAD"
-        }
-      ]    
-    }
-  ]
- }*/
-   
-  // console.log(received_message.text);
-  //console.log(received_message);
- }
 callSendAPI(sender_psid, response);
 }
 /**
