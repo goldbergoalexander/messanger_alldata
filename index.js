@@ -80,7 +80,7 @@ let text = received_message.text;
         "buttons":[
           {
             "type":"postback",
-             "title":"помощь/help"
+             "title":"помощь/help",
 			 "payload": "help",
           },
           {
