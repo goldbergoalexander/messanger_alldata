@@ -93,7 +93,7 @@ let text = received_message.text;
                 "title": "поиск авто",
                 "payload": "carsearch",
 			  
-		  }
+		  },
 		  {
 			    "type": "postback",
                 "title": "про AllDataBot",
