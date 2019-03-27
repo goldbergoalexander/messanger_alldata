@@ -107,7 +107,7 @@ bodyParser = require('body-parser');
 			  
 		  }
 		  */
-        ]
+        
       }
     }
   }
