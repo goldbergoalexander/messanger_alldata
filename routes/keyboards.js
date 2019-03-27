@@ -94,18 +94,8 @@ bodyParser = require('body-parser');
 		  }
 		 
 		 ]
-          },
-          {
-                "type": "postback",
-                "title": "Цены за услуги",
-                "payload": "price",
-          },
-          {
-			    "type": "postback",
-                "title": "Узнать типы Техпаспортов",
-                "payload": "typetech",
-			  
-		  }
+          }
+          
 		  /*
 		  {
 			    "type": "web_url",
