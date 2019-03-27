@@ -59,7 +59,7 @@ bodyParser = require('body-parser');
   *###########################################################################  Services keyboard ###############################################################################
   *ывывыв
   */
-  
+  function services(){
   return { "attachment":{
       "type":"template",
       "payload":{
@@ -118,6 +118,7 @@ bodyParser = require('body-parser');
       }
     }
   }
+ }
   /*
   *
   *###########################################################################  Services keyboard ###############################################################################
@@ -129,5 +130,10 @@ bodyParser = require('body-parser');
   
   
   
-  module.exports = {mainmenu:mainmenu}
+  module.exports = {
+	  mainmenu:mainmenu,
+	  services:services
+	  
+	  
+	  }
   

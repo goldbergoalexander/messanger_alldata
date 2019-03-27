@@ -85,6 +85,30 @@ callSendAPI(sender_psid, response);
 * handle message if say "hallo"
 *
 */
+																			/**
+																			*
+																			* handle postback
+																			*
+																			*/
+
+
+function handlePostback(sender_psid, received_postback) {
+let response;	
+let payload = received_postback.payload;
+ if (payload === 'services') {
+	  response = keyboards.services();
+	  callSendAPI(sender_psid, response);
+    }
+
+}
+/**
+																			*
+																			* handle postback
+																			*
+																			*/
+
+
+
 
 // Creates the endpoint for our webhook 
 app.post('/webhook', (req, res) => {  
