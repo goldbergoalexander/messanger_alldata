@@ -89,12 +89,9 @@ bodyParser = require('body-parser');
 		  }
 	  
 	  ]      
-    }
-    
-  ],
-  "elements":[
-     {
-      "title":"Поиск  в едр ",
+    },
+	{
+      "title":"Поиск  в едр 1 ",
       "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
       "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
        "buttons":[
@@ -117,9 +114,33 @@ bodyParser = require('body-parser');
 		  }
 	  
 	  ]      
-    }
-    
-  ],
+    },
+    {
+      "title":"Поиск  в едр3 ",
+      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+      "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
+       "buttons":[
+	  {
+            "type":"postback",
+             "title":"Простой",
+			 "payload": "simlpe",
+          },
+          {
+                "type": "postback",
+                "title": "2 параметра",
+                "payload": "twoparam",
+          },
+		 
+          {
+			    "type": "postback",
+                "title": "3 параметра",
+                "payload": "threeparame",
+			  
+		  }
+	  
+	  ]      
+    },
+  ]  
   
           
 		  /*
