@@ -63,31 +63,41 @@ bodyParser = require('body-parser');
   return { "attachment":{
       "type":"template",
       "payload":{
-        "template_type":"media",
-          "elements":[
-          {
-            "media_type":"image",
-            "buttons":[
-		  {
+        "template_type":"generic",
+  "elements":[
+     {
+      "title":"<TITLE_TEXT>",
+      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+      "subtitle":"Cool",
+      "default_action": {
+        "type": "web_url",
+        "url": "https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+        "messenger_extensions": <TRUE>,
+        "webview_height_ratio": "COMPACT"
+      },
+      "buttons":[
+	  {
             "type":"postback",
-             "title":"простой поиск ЕДР",
-			 "payload": "simle",
+             "title":"помощь/help",
+			 "payload": "help",
           },
           {
                 "type": "postback",
-                "title": "2 параметра",
-                "payload": "twoparam",
+                "title": "Сервисы",
+                "payload": "services",
           },
 		 
           {
 			    "type": "postback",
-                "title": "3 параметра",
-                "payload": "threeparam",
+                "title": "про AllDataBot",
+                "payload": "about",
 			  
-		  }		 
-		 
-		 ]
-          }
+		  }
+	  
+	  ]      
+    }
+    
+  ]
           
 		  /*
 		  {
