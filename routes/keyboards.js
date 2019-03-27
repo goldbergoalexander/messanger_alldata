@@ -65,6 +65,7 @@ bodyParser = require('body-parser');
       "payload":{
         "template_type":"generic",
   "elements":[
+  //###########################################################  Element for EDR #############################################################################
      {
       "title":"Поиск  в едр ",
       "image_url":"https://raw.githubusercontent.com/goldbergoalexander/messanger_alldata/master/img/edr.jpg?token=ATNMdg6GxOxd65JMMHkGNrPDZ5gNoHlBks5cm0s5wA%3D%3D",
@@ -91,6 +92,7 @@ bodyParser = require('body-parser');
 	  
 	  ]      
     },
+	//###########################################################  Element for car #############################################################################
 	{
       "title":"Поиск  в едр 1 ",
       "image_url":"https://raw.githubusercontent.com/goldbergoalexander/messanger_alldata/master/img/search.png?token=ATNMdqOYbC5COFIdjWVpK_tHdjM06jBOks5cm0vAwA%3D%3D",
@@ -116,6 +118,7 @@ bodyParser = require('body-parser');
 	  
 	  ]      
     },
+	//###########################################################  Element for wheather #############################################################################
     {
       "title":"Поиск  в едр3 ",
       "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/EDR.jpg?raw=true",
