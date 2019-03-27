@@ -67,8 +67,7 @@ bodyParser = require('body-parser');
           "elements":[
           {
             "media_type":"image",
-            "url":"https://scontent.fiev21-1.fna.fbcdn.net/v/t1.0-9/49375917_874307449627689_2650600686898642944_n.jpg?_nc_cat=105&_nc_ht=scontent.fiev21-1.fna&oh=d14a2826aef4891dd02a791219144008&oe=5D0F3F23", //changed domain
-             "buttons":[
+            "buttons":[
 		  {
             "type":"postback",
              "title":"простой поиск ЕДР",
