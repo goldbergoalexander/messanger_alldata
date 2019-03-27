@@ -86,14 +86,8 @@ bodyParser = require('body-parser');
                 "title": "3 параметра",
                 "payload": "threeparame",
 			  
-		  },
-		  {
-			    "type": "postback",
-                "title": "3 параметра",
-                "payload": "threeparame",
-			  
 		  }
-		  
+		  	  
 	  
 	  ]      
     },
