@@ -118,7 +118,7 @@ bodyParser = require('body-parser');
     },
     {
       "title":"Поиск  в едр3 ",
-      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/EDR.jpg?raw=true",
       "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
        "buttons":[
 	  {
