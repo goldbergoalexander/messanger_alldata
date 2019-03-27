@@ -33,14 +33,14 @@ bodyParser = require('body-parser');
           },
           {
                 "type": "postback",
-                "title": "поиск в едр",
-                "payload": "edrsearch",
+                "title": "Сервисы",
+                "payload": "services",
           },
 		 
           {
 			    "type": "postback",
-                "title": "поиск авто",
-                "payload": "carsearch",
+                "title": "про AllDataBot",
+                "payload": "about",
 			  
 		  }
 		 
@@ -54,6 +54,77 @@ bodyParser = require('body-parser');
   *###########################################################################  main keyboard ###############################################################################
   *
   */
+  /*
+  *
+  *###########################################################################  Services keyboard ###############################################################################
+  *ывывыв
+  */
+  
+  return { "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"media",
+          "elements":[
+          {
+            "media_type":"<image|video>",
+            "url":"http://arhitek.xyz/#contactForm", //changed domain
+             "buttons":[
+		  {
+            "type":"postback",
+             "title":"простой поиск ЕДР",
+			 "payload": "simle",
+          },
+          {
+                "type": "postback",
+                "title": "2 параметра",
+                "payload": "twoparam",
+          },
+		 
+          {
+			    "type": "postback",
+                "title": "3 параметра",
+                "payload": "threeparam",
+			  
+		  },
+		  {
+			    "type": "postback",
+                "title": "поиск кведов",
+                "payload": "threeparam",
+			  
+		  }
+		 
+		 ]
+          },
+          {
+                "type": "postback",
+                "title": "Цены за услуги",
+                "payload": "price",
+          },
+          {
+			    "type": "postback",
+                "title": "Узнать типы Техпаспортов",
+                "payload": "typetech",
+			  
+		  }
+		  /*
+		  {
+			    "type": "web_url",
+                "url": "http://arhitek.xyz/#contactForm",
+                "title": "Написать мне"
+			  
+		  }
+		  */
+        ]
+      }
+    }
+  }
+  /*
+  *
+  *###########################################################################  Services keyboard ###############################################################################
+  *
+  */
+  
+  
   
   
   
