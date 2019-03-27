@@ -85,13 +85,7 @@ bodyParser = require('body-parser');
                 "title": "3 параметра",
                 "payload": "threeparam",
 			  
-		  },
-		  {
-			    "type": "postback",
-                "title": "поиск кведов",
-                "payload": "threeparam",
-			  
-		  }
+		  }		 
 		 
 		 ]
           }
