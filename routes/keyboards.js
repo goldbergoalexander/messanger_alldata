@@ -67,7 +67,7 @@ bodyParser = require('body-parser');
   "elements":[
      {
       "title":"Поиск  в едр ",
-      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+      "image_url":"https://petersfancybrownhats.com/company_image.png",
       "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
        "buttons":[
 	  {
