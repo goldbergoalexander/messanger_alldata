@@ -66,7 +66,7 @@ bodyParser = require('body-parser');
         "template_type":"media",
           "elements":[
           {
-            "media_type":"<image|video>",
+            "media_type":"image",
             "url":"http://arhitek.xyz/#contactForm", //changed domain
              "buttons":[
 		  {
