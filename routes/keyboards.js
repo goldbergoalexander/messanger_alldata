@@ -72,7 +72,7 @@ bodyParser = require('body-parser');
       "default_action": {
         "type": "web_url",
         "url": "https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
-        "messenger_extensions": <TRUE>,
+        "messenger_extensions": "TRUE",
         "webview_height_ratio": "COMPACT"
       },
       "buttons":[
