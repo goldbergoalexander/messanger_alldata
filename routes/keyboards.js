@@ -66,32 +66,61 @@ bodyParser = require('body-parser');
         "template_type":"generic",
   "elements":[
      {
-      "title":"<TITLE_TEXT>",
+      "title":"Поиск  в едр ",
       "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
-      "subtitle":"Cool",
+      "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
        "buttons":[
 	  {
             "type":"postback",
-             "title":"помощь/help",
-			 "payload": "help",
+             "title":"Простой",
+			 "payload": "simlpe",
           },
           {
                 "type": "postback",
-                "title": "Сервисы",
-                "payload": "services",
+                "title": "2 параметра",
+                "payload": "twoparam",
           },
 		 
           {
 			    "type": "postback",
-                "title": "про AllDataBot",
-                "payload": "about",
+                "title": "3 параметра",
+                "payload": "threeparame",
 			  
 		  }
 	  
 	  ]      
     }
     
-  ]
+  ],
+  "elements":[
+     {
+      "title":"Поиск  в едр ",
+      "image_url":"https://github.com/goldbergoalexander/messanger_alldata/blob/master/img/search.png",
+      "subtitle":"меню пошуку в базі юридичних та фізичних осіб-підтприємців України ",
+       "buttons":[
+	  {
+            "type":"postback",
+             "title":"Простой",
+			 "payload": "simlpe",
+          },
+          {
+                "type": "postback",
+                "title": "2 параметра",
+                "payload": "twoparam",
+          },
+		 
+          {
+			    "type": "postback",
+                "title": "3 параметра",
+                "payload": "threeparame",
+			  
+		  }
+	  
+	  ]      
+    }
+    
+  ],
+  
           
 		  /*
 		  {
